@@ -14,6 +14,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 app.get('/', async (req, res) => {
   const shortUrls = await ShortUrl.find();
